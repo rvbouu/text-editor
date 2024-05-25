@@ -4,50 +4,40 @@
 import { openDB } from 'idb';
 
 // We will define a global constant for our database name so we don't mess it up anywhere
-const DB_NAME = "jate"
+const jatedb = "jate"
 
 const initdb = async () =>
-  openDB(DB_NAME, 1, {
+  openDB(jatedb, 1, {
     upgrade(db) {
-      if (db.objectStoreNames.contains(DB_NAME)) {
+      if (db.objectStoreNames.contains(jatedb)) {
         console.log('jate database already exists');
         return;
       }
-      db.createObjectStore(DB_NAME, { keyPath: 'id', autoIncrement: true });
+      db.createObjectStore(jatedb, { keyPath: 'id', autoIncrement: true });
       console.log('jate database created');
     },
   });
 
-/*
-  We need to add some code below which will take updated content and save it to IndexedDB.
-*/
 export const putDb = async (content) => {
-  // First, create a variable, and set it to asyncronously await the opening of the database. Replace the items in all caps
   
-  // TODO: Change YOUR_OPEN_DB_VAR to whatever variable name you wanT. Note that you'll then need to change any other occcurences of YOUR_OPEN_DB_VAR to the same variable name.
-  const jateDb = await openDB(DB_NAME, 1);
+  const jateDb = await openDB(jatedb, 1);
 
-  // TODO: Now create a variable for the transaction; again, this will be referenced below.
-  const tx = jateDb.transaction(DB_NAME, 'readwrite');
+  const tx = jateDb.transaction(jatedb, 'readwrite');
 
-  // TODO: Now create a variable for the store
-  const store = tx.objectStore(DB_NAME);
+  const store = tx.objectStore(jatedb);
 
   const request = store.put({ id: 1, value: content });
   const result = await request;
   console.log('🚀 - data saved to the database', result.value);
 };
 
-/*
-  We need to add some code below which will get all content from IndexedDB.
-*/
 export const getDb = async () => {
-  // You can duplicate the same lines of code from above, except that the transaction will be 'readonly'
-  const jateDb = await openDB(DB_NAME, 1);
-  const tx = jateDb.transaction(DB_NAME, 'readonly');
-  const store = tx.objectStore(DB_NAME);
+ 
+  const jateDb = await openDB(jatedb, 1);
 
-  // TODO: Copy LINES 28, 31 and 34 above; the new line 31 code should be "readonly"
+  const tx = jateDb.transaction(jatedb, 'readonly');
+
+  const store = tx.objectStore(jatedb);
 
   // Leave the rest as-is
   const request = store.get(1);
