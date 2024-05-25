@@ -2,7 +2,7 @@
 
 ## Description
 
-This challenge was to build a single-page text editor application that runs in the browser. The single-page application should be up to PWA criteria.
+This challenge was to build a single-page text editor application that runs in the browser. The single-page application should be up to PWA criteria. The link to the deployed application on Render can be found [here](https://rvb-text-editor.onrender.com/)
 
 ## User Story
 
@@ -65,20 +65,18 @@ THEN I should have proper build scripts for a webpack application
 ## Screenshot
 
 ### Gif of Application Functionality
-![gif of application functionality](./images/categories.gif)
+![gif of application functionality](./images/pwa-text-editor.gif)
 
 ### Screenshot of `manifest.json` file
-![screenshot of manifest.json](./images/products.gif)
+![screenshot of manifest.json](./images/manifest_json.png)
 
 ### Screenshot of application's registered service worker
-![screenshot of registered service worker](./images/tags.gif)
+![screenshot of registered service worker](./images/service_workers.png)
 
 ### Screenshot of application's IndexedDb storage
-![screenshot of IndexedDb storage](./images/tags.gif)
+![screenshot of IndexedDb storage](./images/indexeddb.png)
 
-
-
-The full video showing the application functionality can be found [here](https://drive.google.com/file/d/1s7N0ClafLIgskt6gIZb_Ynp5ANdq8Xx3/view?usp=sharing).
+The link to the deployed application can be found [here](https://rvb-text-editor.onrender.com/).
 
 ## Questions
 
