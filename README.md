@@ -2,30 +2,44 @@
 
 ## Description
 
-This challenge was to build the back end for an e-commerce website. It works with Express.js API and Sequelize to interact with a PostgreSQL database. The walkthrough video can be found [here](https://drive.google.com/file/d/1s7N0ClafLIgskt6gIZb_Ynp5ANdq8Xx3/view?usp=sharing).
+This challenge was to build a single-page text editor application that runs in the browser. The single-page application should be up to PWA criteria.
 
 ## User Story
 
 ```md
-AS A manager at an internet retail company
-I WANT a back end for my e-commerce website that uses the latest technologies
-SO THAT my company can compete with other e-commerce companies
+AS A developer
+I WANT to create notes or code snippets with or without an internet connection
+SO THAT I can reliably retrieve them for later use
 ```
 
 ## Acceptance Criteria
 
 ```md
-GIVEN a functional Express.js API
-WHEN I add my database name, PostgreSQL username, and PostgreSQL password to an environment variable file
-THEN I am able to connect to a database using Sequelize
-WHEN I enter schema and seed commands
-THEN a development database is created and is seeded with test data
-WHEN I enter the command to invoke the application
-THEN my server is started and the Sequelize models are synced to the PostgreSQL database
-WHEN I open API GET routes in Insomnia for categories, products, or tags
-THEN the data for each of these routes is displayed in a formatted JSON
-WHEN I test API POST, PUT, and DELETE routes in Insomnia
-THEN I am able to successfully create, update, and delete data in my database
+GIVEN a text editor web application
+WHEN I open my application in my editor
+THEN I should see a client server folder structure
+WHEN I run `npm run start` from the root directory
+THEN I find that my application should start up the backend and serve the client
+WHEN I run the text editor application from my terminal
+THEN I find that my JavaScript files have been bundled using webpack
+WHEN I run my webpack plugins
+THEN I find that I have a generated HTML file, service worker, and a manifest file
+WHEN I use next-gen JavaScript in my application
+THEN I find that the text editor still functions in the browser without errors
+WHEN I open the text editor
+THEN I find that IndexedDB has immediately created a database storage
+WHEN I enter content and subsequently click off of the DOM window
+THEN I find that the content in the text editor has been saved with IndexedDB
+WHEN I reopen the text editor after closing it
+THEN I find that the content in the text editor has been retrieved from our IndexedDB
+WHEN I click on the Install button
+THEN I download my web application as an icon on my desktop
+WHEN I load my web application
+THEN I should have a registered service worker using workbox
+WHEN I register a service worker
+THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
+WHEN I deploy to Render
+THEN I should have proper build scripts for a webpack application
 ```
 
 ## Table of Contents
@@ -36,50 +50,31 @@ THEN I am able to successfully create, update, and delete data in my database
 
 * [Acceptance Criteria](#acceptance-criteria)
 
-* [Installation](#installation)
-
-* [Usage](#usage)
-
-* [Tests](#tests)
-
 * [Contributing](#contributing)
 
 * [Screenshot](#screenshot)
 
 * [Questions](#questions)
 
-## Installation
-
-💾
-
-`npm init`
-
-`npm i dotenv express pg sequelize`
-
-## Usage
-
-💻
-
-This application is used to GET, create (POST), update (PUT), and DELETE data for each route (categories, products, tags)
-
-## Tests
-
-N/A
-
 ## Contributing
 
 * [**Vanessa Bou**](https://github.com/rvbouu)
+ 
+ * This assignment consist of starter code that was given to us by our instructor Gary Almes that I debugged and added to in order for the application to work.
 
 ## Screenshot
 
-### Catergory Routes
+### Gif of Application Functionality
 ![gif of application functionality](./images/categories.gif)
 
-### Product Routes
-![gif of application functionality](./images/products.gif)
+### Screenshot of `manifest.json` file
+![screenshot of manifest.json](./images/products.gif)
 
-### Tag Routes
-![gif of application functionality](./images/tags.gif)
+### Screenshot of application's registered service worker
+![screenshot of registered service worker](./images/tags.gif)
+
+### Screenshot of application's IndexedDb storage
+![screenshot of IndexedDb storage](./images/tags.gif)
 
 
 
